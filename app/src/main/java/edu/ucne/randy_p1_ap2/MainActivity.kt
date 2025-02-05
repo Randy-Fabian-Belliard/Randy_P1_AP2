@@ -17,10 +17,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Randy_P1_AP2Theme {
-                val navHost = rememberNavController()
-                AppNavHost(
-                    navController = navHost
-                )
+
             }
         }
     }
