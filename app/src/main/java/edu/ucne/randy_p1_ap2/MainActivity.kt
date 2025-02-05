@@ -30,67 +30,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Randy_P1_AP2Theme {
-              /*  Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) {
 
-                        val navController = rememberNavController()
-                        NavHost(
-                            navController = navController,
-                            startDestination = ScreenOne
-                        ) {
-                            composable<ScreenOne> {
-                                Screen1 {
-                                    navController.navigate(ScreenTwo("Enel"))
-                                }
-                            }
-                            composable<ScreenTwo> {
-                                val name = it.toRoute<ScreenTwo>().name
-                                Screen2(name)
-                            }
-
-                        }
-
-                    }
-                }*/
             }
         }
     }
 }
-
-
-
-/*
-@Composable
-fun Screen1(modifier: Modifier = Modifier, onGoToScreen2: () -> Unit) {
-    Column {
-
-        Text("Screen 1", modifier = modifier.padding(16.dp))
-        OutlinedButton(
-            onClick = {
-                onGoToScreen2()
-            },
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text("Go to Screen 2")
-        }
-    }
-}
-
-@Composable
-fun Screen2(nombre: String, modifier: Modifier = Modifier) {
-    Text("Screen 2", modifier = modifier.padding(16.dp))
-    Text("Valor recibido: $nombre")
-}
-
-
-@Composable
-fun Screen3(modifier: Modifier = Modifier) {
-    Text("Screen 1", modifier = modifier.padding(16.dp))
-}
-
-@Serializable
-data object ScreenOne
-
-@Serializable
-data class ScreenTwo(val name: String)
-*/
