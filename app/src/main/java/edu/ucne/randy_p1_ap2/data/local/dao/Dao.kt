@@ -1,5 +1,5 @@
 package edu.ucne.randy_p1_ap2.data.local.dao
-
+/*
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
@@ -28,4 +28,4 @@ interface Dao {
     @Query("select * from entity ")
     fun getAll(): Flow<List<Entity>>
 
-}
+}*/

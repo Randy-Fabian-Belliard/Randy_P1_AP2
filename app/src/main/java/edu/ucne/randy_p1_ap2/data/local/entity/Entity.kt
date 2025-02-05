@@ -1,5 +1,5 @@
 package edu.ucne.randy_p1_ap2.data.local.entity
-
+/*
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,4 +7,4 @@ import androidx.room.PrimaryKey
 data class Entity(
     @PrimaryKey
     val Id: Int? = null,
-)
+)*/
