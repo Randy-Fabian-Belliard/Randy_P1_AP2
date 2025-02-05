@@ -1,5 +1,5 @@
  package edu.ucne.randy_p1_ap2.presentation.navigation
-
+/*
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
@@ -27,3 +27,4 @@ fun AppNavHost(
 */
 
 
+*/
