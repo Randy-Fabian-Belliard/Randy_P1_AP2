@@ -1,5 +1,5 @@
 package edu.ucne.randy_p1_ap2.data.local.database
-
+/*
 import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.RoomDatabase
@@ -15,4 +15,4 @@ import edu.ucne.randy_p1_ap2.data.local.entity.Entity
 abstract class Database : RoomDatabase(){
  abstract fun Dao(): Dao
 
-}
+}*/
