@@ -1,18 +1,18 @@
 package edu.ucne.randy_p1_ap2.data.local.database
-/*
-import androidx.room.Dao
+
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import edu.ucne.randy_p1_ap2.data.local.entity.Entity
+import edu.ucne.randy_p1_ap2.data.local.dao.SistemasDao
+import edu.ucne.randy_p1_ap2.data.local.entity.SistemasEntity
 
 @Database(
 
-    entities = [Entity::class],
-    version = 1,
+    entities = [SistemasEntity::class],
+    version = 2,
     exportSchema = false
 
 )
-abstract class Database : RoomDatabase(){
- abstract fun Dao(): Dao
+abstract class AppDb : RoomDatabase(){
+    abstract fun sistemasDao(): SistemasDao
 
-}*/
+}
