@@ -19,7 +19,8 @@ class MainActivity : ComponentActivity() {
             Randy_P1_AP2Theme {
                 val navHost = rememberNavController()
                 AppNavHost(
-                    navController = navHost
+                    //navController = navHost
+                    navHost
                 )
             }
         }
