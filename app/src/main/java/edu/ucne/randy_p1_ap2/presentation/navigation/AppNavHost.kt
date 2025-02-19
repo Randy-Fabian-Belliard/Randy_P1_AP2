@@ -10,49 +10,76 @@ import androidx.navigation.toRoute
 import edu.ucne.randy_p1_ap2.presentation.sistenas.DistemaEditScreen
 import edu.ucne.randy_p1_ap2.presentation.sistenas.SistemaListScreen
 import edu.ucne.randy_p1_ap2.presentation.sistenas.SistemaScreen
+import edu.ucne.randy_p1_ap2.presentation.ticket.TicketListScreen
+import edu.ucne.randy_p1_ap2.presentation.ticket.TicketScreen
 
+ /*
+  @RequiresApi(Build.VERSION_CODES.O)
+ @Composable
+ fun AppNavHost(
+     navController: NavHostController,
+ ) {
+     NavHost(
+         navController = navController,
+         startDestination = Screen.SistemaList
+     ) {
 
- @RequiresApi(Build.VERSION_CODES.O)
-@Composable
-fun AppNavHost(
-    navController: NavHostController,
-) {
-    NavHost(
-        navController = navController,
-        startDestination = Screen.SistemaList
-    ) {
+         composable<Screen.SistemaList> {
+             SistemaListScreen(
+                 onCreate = { navController.navigate(Screen.Sistema(0)) },
+                 onDelete = { navController.navigate(Screen.SistemaDelete(it)) },
+                 onEdit = { navController.navigate(Screen.SistemaEdit(it)) },
+                 onBack = { navController.navigateUp() }
+             )
+         }
 
-        composable<Screen.SistemaList> {
-            SistemaListScreen(
-                onCreate = { navController.navigate(Screen.Sistema(0)) },
-                onDelete = { navController.navigate(Screen.SistemaDelete(it)) },
-                onEdit = { navController.navigate(Screen.SistemaEdit(it)) },
-                onBack = { navController.navigateUp() }
-            )
-        }
+         composable<Screen.Sistema> {
+             SistemaScreen(
+                 goBack = { navController.navigateUp() }
+             )
+         }
 
-        composable<Screen.Sistema> {
-            SistemaScreen(
-                goBack = { navController.navigateUp() }
-            )
-        }
-
-        composable<Screen.SistemaEdit> { backStackEntry ->
-            val args = backStackEntry.toRoute<Screen.SistemaEdit>()
-            DistemaEditScreen(
-                sistemaId  = args.SistemaId,
-                goBack = { navController.navigateUp() }
-            )
-        }
-
-
-
-
-
-
-    }
-}
+         composable<Screen.SistemaEdit> { backStackEntry ->
+             val args = backStackEntry.toRoute<Screen.SistemaEdit>()
+             DistemaEditScreen(
+                 sistemaId  = args.SistemaId,
+                 goBack = { navController.navigateUp() }
+             )
+         }
 
 
 
 
+
+
+     }
+ }
+ */
+
+
+
+ @Composable
+ fun AppNavHost(
+     navHostController: NavHostController,
+ ) {
+
+     NavHost(navController = navHostController, startDestination = Screen.ServicioList) {
+         composable<Screen.ServicioList> {
+             TicketListScreen(
+                 onVerServicio = {
+                     navHostController.navigate(Screen.Servicio(it.ticketId ?: 0))
+                 },
+                 onAddServicio = {
+                     navHostController.navigate(Screen.Servicio(0))
+                 }
+             )
+         }
+         composable<Screen.Servicio> {
+             val args = it.toRoute<Screen.Servicio>()
+             TicketScreen(
+                 goToServicioList = { navHostController.navigate(Screen.ServicioList) },
+                 ticketId = args.servicioId
+             )
+         }
+     }
+ }
